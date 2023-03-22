@@ -1,6 +1,6 @@
 const JWT = require("jsonwebtoken");
 
-const middlewares = async (req, res, next) => {
+const middlewares = (req, res, next) => {
   let token = req.get("authorization");
   if (token) {
     token = token.slice(7);
@@ -22,7 +22,7 @@ const middlewares = async (req, res, next) => {
     });
   }
 };
-const middlewares1 = async (req, res, next) => {
+const middlewares1 = (req, res, next) => {
   try {
     const token = req.headers["authorization"].split(" ")[1];
     JWT.verify(token, process.env.JWT_SECRET, (err, decode) => {

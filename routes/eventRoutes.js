@@ -7,22 +7,22 @@ const {
   eventAppointmentController,
   updateStatusController,
 } = require("../controllers/eventController");
-const authMiddlewares = require("../middlewares/authMiddlewares");
+const { middlewares, middlewares1 } = require("../middlewares/authMiddlewares");
 
 const router = express.Router();
 
 //POST SINGLE EVENT INFO
 
-router.post("/getEventInfo", authMiddlewares, getEventInfoController);
+router.post("/getEventInfo", middlewares1, getEventInfoController);
 
 //POST UPDATE PROFILE
-router.post("/updateProfile", authMiddlewares, updateProfileController);
+router.post("/updateProfile", middlewares1, updateProfileController);
 
 //POST GET SINGLE EVENT
-router.post("/getEventById", authMiddlewares, getEventByIdController);
+router.post("/getEventById", middlewares1, getEventByIdController);
 
-router.get("/event-appointment", authMiddlewares, eventAppointmentController);
+router.get("/event-appointment", middlewares1, eventAppointmentController);
 
 //POST Update status
-router.post("/update-status", authMiddlewares, updateStatusController);
+router.post("/update-status", middlewares1, updateStatusController);
 module.exports = router;

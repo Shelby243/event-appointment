@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const path = require("path");
 dotenv.config();
+const mongoose = require("mongoose");
 
 //mongodb connection
 connectDB();
